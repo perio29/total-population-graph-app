@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 24px;
   align-items: flex-start;
   padding: 0 24px;
 `;
@@ -11,12 +11,17 @@ export const Container = styled.div`
 export const Title = styled.h1`
   font-size: 16px;
   font-weight: bold;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 export const CheckBoxWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 8px;
+  gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const CheckBoxGroup = styled.div`
@@ -34,4 +39,8 @@ export const CheckBox = styled.input`
 
 export const CheckBoxLabel = styled.label`
   font-size: 12px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
