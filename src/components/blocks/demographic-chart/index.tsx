@@ -3,7 +3,9 @@ import styled from "styled-components";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-const Container = styled.div``;
+const Container = styled.div`
+  width: 100%;
+`;
 
 type Props = {
   prefPopulations: PrefPopulation[];
