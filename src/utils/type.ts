@@ -34,3 +34,8 @@ export type PrefPopulationResponse = {
   message: null;
   result: ResponseResult;
 };
+
+export type Datasets = {
+  label: string;
+  data: number[];
+};
