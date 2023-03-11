@@ -15,7 +15,7 @@ import {
 
 const PrefecturesList = () => {
   const { data, error, isLoading } = usePrefecture();
-  const [prefPopulation, setPrefPopulation] = useState<PrefPopulation[]>([]);
+  const [prefPopulations, setPrefPopulations] = useState<PrefPopulation[]>([]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -39,13 +39,13 @@ const PrefecturesList = () => {
         )}`,
         { headers: { "x-api-key": process.env.NEXT_PUBLIC_API_KEY as string } }
       );
-      setPrefPopulation([
-        ...prefPopulation,
+      setPrefPopulations([
+        ...prefPopulations,
         { name: prefName, data: data.result.data[0].data },
       ]);
     } else {
-      setPrefPopulation(
-        prefPopulation.filter((value) => value.name !== prefName)
+      setPrefPopulations(
+        prefPopulations.filter((value) => value.name !== prefName)
       );
     }
   };
@@ -70,7 +70,7 @@ const PrefecturesList = () => {
           </CheckBoxGroup>
         ))}
       </CheckBoxWrapper>
-      <DemographicChart prefPopulation={prefPopulation} />
+      <DemographicChart prefPopulations={prefPopulations} />
     </Container>
   );
 };
