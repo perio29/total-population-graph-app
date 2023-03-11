@@ -13,10 +13,8 @@ const fetcher = async (key: string) => {
 
 export default function Home() {
   return (
-    <>
-      <SWRConfig value={{ fetcher }}>
-        <ScreenTop />
-      </SWRConfig>
-    </>
+    <SWRConfig value={{ fetcher }}>
+      <ScreenTop />
+    </SWRConfig>
   );
 }
